@@ -1,5 +1,5 @@
-MCHE485: Mechanical Vibrations - Spring 2014
-=====================
+### MCHE485: Mechanical Vibrations - Spring 2014
+
 
 This repository contains code used during the Spring 2014 semester of *MCHE485: Mechanical Vibrations* at UL Lafayette. It will contain MATLAB/Octave and Python code.
 
