@@ -66,6 +66,7 @@ setp(ltext,family='CMU Serif',fontsize=16)
 tight_layout(pad=0.5)
 
 # save the figure as a high-res pdf in the current folder
-savefig('FrictionViscous_comparison.png',dpi=300) 
+savefig('FrictionViscous_comparison.pdf',dpi=300) 
+savefig('FrictionViscous_comparison.pdf',dpi=300) 
 
 show()
