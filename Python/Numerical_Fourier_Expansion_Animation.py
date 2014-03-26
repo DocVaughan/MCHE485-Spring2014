@@ -24,27 +24,27 @@ import matplotlib.animation as animation
 #--------- Input your function to examine here --------
 #
 # This is the square wave from the Fall 2012 midterm example we did in class
-t = np.linspace(0,4,4000)       # define the time to look at, easiest to just choose 1 period
-w0 = 2*np.pi/t[-1]              # define the fundamental frequency (here, I know t(end)=tau)
-tau_0 = 2*np.pi/w0              # define fundamental period based on w0
-#
-y = (t>-4) - 2*(t>-2) + 2*(t>0) - 2*(t>2) + 2*(t>4) - 2*(t>6) + 2*(t>8) - (t>10)
+# t = np.linspace(0,4,4000)       # define the time to look at, easiest to just choose 1 period
+# w0 = 2*np.pi/t[-1]              # define the fundamental frequency (here, I know t(end)=tau)
+# tau_0 = 2*np.pi/w0              # define fundamental period based on w0
+# #
+# y = (t>-4) - 2*(t>-2) + 2*(t>0) - 2*(t>2) + 2*(t>4) - 2*(t>6) + 2*(t>8) - (t>10)
 
 # This is the "trapezoid" wave example we worked in class
-# t = r_[0:4:4000j]       # define the time to look at, easiest to just choose 1 period
-# w0 = 2*pi/t[-1]       # define the fundamental frequency (here, I know t(end)=tau)
-# tau_0 = 2*pi/w0        # define fundamental period based on w0
+t = np.linspace(0,4,4000)       # define the time to look at, easiest to just choose 1 period
+w0 = 2*np.pi/t[-1]                 # define the fundamental frequency (here, I know t(end)=tau)
+tau_0 = 2*np.pi/w0                 # define fundamental period based on w0
 #
-# F0 = 1
-# y = zeros((len(t),))
-# 
-# for ii in range(len(t)):
-#   if t[ii] <= tau_0/3:
-#       y[ii] = 3*F0/tau_0*t[ii]
-#   elif t[ii] <= 2*tau_0/3:
-#       y[ii] = F0
-#   else:
-#       y[ii] = -3*F0/tau_0*t[ii]+3*F0
+F0 = 1
+y = np.zeros((len(t),))
+
+for ii in range(len(t)):
+  if t[ii] <= tau_0/3:
+      y[ii] = 3*F0/tau_0*t[ii]
+  elif t[ii] <= 2*tau_0/3:
+      y[ii] = F0
+  else:
+      y[ii] = -3*F0/tau_0*t[ii]+3*F0
 
 
 # Book Problem 3.3
@@ -128,7 +128,14 @@ plt.xlabel(r'Time (s)',family='CMU Serif',fontsize=22,weight='bold',labelpad=5)
 plt.ylabel(r'$f(t)$',family='CMU Serif',fontsize=22,weight='bold',labelpad=10)
 
 exactLine = plt.plot(t,y,'--',linewidth=2,label=r'Exact')
-plt.ylim(-1.5,2.0)
+
+# For the square wave
+# plt.ylim(-1.5,2.0)
+
+# For the trapezoid
+plt.ylim(0.0,1.5)
+
+
 f = 'Fourier Approx.'
 approxLine, = plt.plot([],[],linewidth=2,label=f)
 
