@@ -11,9 +11,11 @@
 \usepackage{subfigure}
 \usepackage{todonotes}
 \usepackage{listings}
+\usepackage{dtklogos}
 \usepackage[colorlinks=true, linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
 \bibliographystyle{IEEEtran}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
 
 %---------------- Letter Paper --------------------%
 % be sure to change in document class too
@@ -34,7 +36,7 @@
 \vspace*{1.5in}
 {\LARGE \textbf{PROJECT TITLE}} %<---- Insert your project title here
 
-{\Large MCHE 485: Mechanical Vibrations\\ \vspace*{0.1in} Spring 2013}
+{\Large MCHE 485: Mechanical Vibrations\\ \vspace*{0.1in} Spring 2014}
 
 \vspace*{2.5in}
 
@@ -61,6 +63,15 @@ Lafayette, LA 70504\\
 \end{minipage}
 \end{figure}
 
+% Force some spacing for the third author
+\vspace{0.2in}
+
+Author 3 \\
+Department of Mechanical Engineering\\
+University of Louisiana at Lafayette\\
+Lafayette, LA 70504\\
+\tt{CLID3@louisiana.edu}
+
 \end{center}
 
 \newpage
@@ -71,7 +82,11 @@ Aliquam aliquet, est a ullamcorper condimentum, tellus nulla fringilla elit, a i
 \end{abstract} 
 
 \newpage
-\setcounter{page}{1} % reset the page counter, so it begins with the page of the introduction section
+
+% reset the page counter, so it begins with the page of the introduction section
+\setcounter{page}{1} 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
@@ -81,6 +96,7 @@ Aliquam aliquet, est a ullamcorper condimentum, tellus nulla fringilla elit, a i
 This is the introduction section\ldots Aliquam aliquet, est a ullamcorper condimentum, tellus nulla fringilla elit, a iaculis nulla turpis sed wisi. Fusce volutpat. Etiam sodales ante id nunc. Proin ornare dignissim lacus. Nunc porttitor nunc a sem. Sed sollicitudin velit eu magna. Aliquam erat volutpat. Vivamus ornare est non wisi. Proin vel quam. Vivamus egestas. Nunc tempor diam vehicula mauris. Nullam sapien eros, facilisis vel, eleifend non, auctor dapibus, pede. Ut nulla. Vivamus bibendum, nulla ut congue fringilla, lorem ipsum ultricies risus, ut rutrum velit tortor vel purus. In hac habitasse platea dictumst. Duis fermentum, metus sed congue gravida, arcu dui ornare urna, ut imperdiet enim odio dignissim ipsum. Nulla facilisi. 
 
 Aliquam aliquet, est a ullamcorper condimentum, tellus nulla fringilla elit, a iaculis nulla turpis sed wisi. Fusce volutpat. Etiam sodales ante id nunc. Proin ornare dignissim lacus. Nunc porttitor nunc a sem. Sed sollicitudin velit eu magna. Aliquam erat volutpat. Vivamus ornare est non wisi. Proin vel quam. Vivamus egestas. Nunc tempor diam vehicula mauris. Nullam sapien eros, facilisis vel, eleifend non, auctor dapibus, pede. Ut nulla. Vivamus bibendum, nulla ut congue fringilla, lorem ipsum ultricies risus, ut rutrum velit tortor vel purus. In hac habitasse platea dictumst. Duis fermentum, metus sed congue gravida, arcu dui ornare urna, ut imperdiet enim odio dignissim ipsum. Nulla facilisi. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,8 +137,8 @@ Aliquam aliquet, est a ullamcorper condimentum, tellus nulla fringilla elit, a i
 \label{sec:using_figures}
 \vspace{-0.2in}
 %
-The experimental platform is shown in Figure \ref{fig:cherrypicker_labeled}. \LaTeX will handle numbering the figures in the order that they appear and inserting a properly formatted caption. 
-If the figure file is not in the same folder as your \LaTeX document, then you need to specify the relative path to it. The figure environment is very powerful and customizable. A more thorough review of using figures in \LaTeX can be found at: 
+The experimental platform is shown in Figure \ref{fig:cherrypicker_labeled}. \LaTeX\ will handle numbering the figures in the order that they appear and inserting a properly formatted caption. 
+If the figure file is not in the same folder as your \LaTeX\ document, then you need to specify the relative path to it. The figure environment is very powerful and customizable. A more thorough review of using figures in \LaTeX\ can be found at: 
 
 \hspace{0.25in}\url{http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}
 %
@@ -143,7 +159,7 @@ If the figure file is not in the same folder as your \LaTeX document, then you n
 \label{sec:tables}
 \vspace{-0.2in}
 %
-A table is shown in Table \ref{table:sim_parameters}. Table captions should go above your tables. \LaTeX will handle this, along with numbering the tables in the order that they appear. There are many tools for creating \LaTeX tables, including some macros that will do so from an Excel file, or similar. 
+A table is shown in Table \ref{table:sim_parameters}. Table captions should go above your tables. \LaTeX will handle this, along with numbering the tables in the order that they appear. There are many tools for creating \LaTeX\ tables, including some macros that will do so from an Excel file, or similar. 
 
 % The code below is what creates the table.
 \begin{table}
@@ -167,6 +183,45 @@ $(\dot{x}_a)_{max}$ & 0.4 $\frac{m}{s}$ \\
 \end{tabular}
 \end{center}
 \end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{References}
+\label{sec:references}
+\vspace{-0.2in}
+%
+You should use \BibTeX\ to manage your references, using IEEE-style references. Use the {\tt \textbackslash cite\{\}} command in the text and the {\tt \textbackslash bibliogaphy\{\}} command at the end of the document. This will look something like:
+%
+	%
+	\begin{verbatim}
+	Proin ornare dignissim lacus. Pellentesque vel dui sed orci
+	faucibus iaculis. Suspendisse dictum magna id purus tincidunt
+	rutrum \cite{author1:YYa, author1:YYb, author2:YYa}. Nulla congue.
+	Vivamus sit amet lorem posuere dui vulputate ornare. Phasellus
+	mattis sollicitudin ligula. Duis dignissim felis et urna
+	\cite{author3:YYa, author1:YYa}. Integer adipiscing congue metus.
+
+	% Then, at the end of the document where you would like the bibliography to be:
+	\bibliography{bibtex_filename}
+	
+	% The .bib file, named bibtex_filename, in the above command contains the  
+	% "authorN:YYn" citation IDs used in the document and the information for them.
+
+	\end{verbatim}
+%
+\vspace{-0.2in}
+After you make any changes to the {\tt \textbackslash cite\{\}} commands in the document, there is a three step process needed for the reference changes to propagate through the document. You need to:
+	\vspace{-0.2in}
+	\begin{enumerate}
+		\item Compile the \LaTeX\ document
+		\item Process with \BibTeX, then
+		\item Compile with \LaTeX\ \textit{twice}
+	\end{enumerate}
+	\vspace{-0.2in}
+If you follow this procedure, then \LaTeX\ will handle the numbering of your citations and the ordering of your bibliography automatically. More information on using \BibTeX\ can be found at:
+
+\hspace{0.25in}\url{http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
